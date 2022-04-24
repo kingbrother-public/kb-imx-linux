@@ -135,7 +135,6 @@
                reset-gpios = <&gpio4 24 GPIO_ACTIVE_LOW>;
        };
 
-
        sound-hdmi {
                compatible = "fsl,imx-audio-cdnhdmi";
                model = "audio-hdmi";
@@ -455,7 +454,7 @@
                mclk = <24000000>;
                mclk_source = <0>;
                mipi_csi;
-               status = "disabled";
+               status = "okay";
 
                port {
                        ov5640_mipi_0_ep: endpoint {
@@ -505,7 +504,7 @@
                mclk = <24000000>;
                mclk_source = <0>;
                mipi_csi;
-               status = "okay";
+               status = "disabled";
 
                port {
                        ov5640_mipi_1_ep: endpoint {
@@ -781,7 +780,6 @@
           reg = <1>;
           compatible = "brcm,bcm4329-fmac";
        };
-
 };
 
 &usdhc2 {
@@ -834,6 +832,7 @@
                        MX8MP_IOMUXC_SAI1_MCLK__GPIO4_IO20      0x16 /*USB1_TYPEC_SEL*/
                >;
        };
+
 
        pinctrl_pwm1: pwm1grp {
                fsl,pins = <
@@ -1214,13 +1213,12 @@
                >;
        };
        pinctrl_usdhc1_gpio:wifi_en_grp{
-               fsl,pins = <
+                fsl,pins = <
                         MX8MP_IOMUXC_SAI2_TXFS__GPIO4_IO24 0x19     /*WIFI_EN */
                         MX8MP_IOMUXC_SAI2_TXD0__GPIO4_IO26 0x19 /*WIFI_WKE*/
-               >;
+                >;
 
        };
-
 };
 
 &vpu_g1 {
@@ -1254,7 +1252,7 @@
 &mipi_csi_0 {
        #address-cells = <1>;
        #size-cells = <0>;
-       status = "disabled";
+       status = "okay";
 
        port@0 {
                reg = <0>;
@@ -1271,7 +1269,7 @@
 &mipi_csi_1 {
        #address-cells = <1>;
        #size-cells = <0>;
-       status = "okay";
+       status = "disabled";
 
        port@1 {
                reg = <1>;
@@ -1290,7 +1288,7 @@
 };
 
 &isi_0 {
-       status = "disabled";
+       status = "okay";
 
        cap_device {
                status = "okay";
@@ -1302,7 +1300,7 @@
 };
 
 &isi_1 {
-       status = "okay";
+       status = "disabled";
 
        cap_device {
                status = "okay";
