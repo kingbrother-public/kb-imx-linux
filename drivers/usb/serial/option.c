@@ -1142,7 +1142,7 @@ static const struct usb_device_id option_ids[] = {
 
 	       /* longsung */
         { USB_DEVICE(0x1728, 0x4d11),
-        .driver_into = RSVD(4)},
+        .driver_info = RSVD(4)},
 	{ USB_DEVICE(CMOTECH_VENDOR_ID, CMOTECH_PRODUCT_6001) },
 	{ USB_DEVICE(CMOTECH_VENDOR_ID, CMOTECH_PRODUCT_CMU_300) },
 	{ USB_DEVICE(CMOTECH_VENDOR_ID, CMOTECH_PRODUCT_6003),
