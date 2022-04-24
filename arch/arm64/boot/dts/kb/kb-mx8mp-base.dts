@@ -234,7 +234,7 @@
        #size-cells = <0>;
        fsl,spi-num-chipselects = <1>;
        pinctrl-names = "default";
-       /*pinctrl-0 = <&pinctrl_ecspi2 &pinctrl_ecspi2_cs>;*/
+      /*pinctrl-0 = <&pinctrl_ecspi2 &pinctrl_ecspi2_cs>;*/
        cs-gpios = <&gpio5 13 GPIO_ACTIVE_LOW>;
        status = "disabled";
 
@@ -264,6 +264,8 @@
                        reset-gpios = <&gpio4 22 GPIO_ACTIVE_LOW>;
                        reset-deassert-us = <30000>;
                        eee-broken-1000t;
+           	       at803x,vddio-1p8v;
+                       at803x,vddio-disable;
                };
        };
 };
@@ -286,6 +288,8 @@
                        compatible = "ethernet-phy-ieee802.3-c22";
                        reg = <1>;
                        eee-broken-1000t;
+		       at803x,vddio-1p8v;
+                       at803x,vddio-disable;
                };
        };
 };
@@ -608,7 +612,7 @@
 };
 
 &micfil {
-       status = "dsiabled";
+       status = "disabled";
 };
 
 &pcie{
@@ -1245,7 +1249,6 @@
        #address-cells = <1>;
        #size-cells = <0>;
        status = "okay";
-
        no-reset-control;
        port@0 {
                reg = <0>;
@@ -1262,7 +1265,6 @@
 &mipi_csi_1 {
        #address-cells = <1>;
        #size-cells = <0>;
-
        status = "okay";
        no-reset-control;
        port@1 {
@@ -1283,7 +1285,6 @@
 
 &isi_0 {
        status = "okay";
-
        no-reset-control;
        cap_device {
                status = "okay";
